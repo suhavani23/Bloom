@@ -1,6 +1,6 @@
 export function StreakBadge() {
   return (
-    <div className="px-8 mb-6">
+    <div className="px-8 mb-6 flex justify-center">
       <div
         className="rounded-3xl px-6 py-3 text-center inline-flex items-center gap-2 w-32"
         style={{

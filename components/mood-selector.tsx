@@ -15,15 +15,14 @@ export function MoodSelector({ onSelect, selected }: MoodSelectorProps) {
   ]
 
   return (
-    <div className="px-8 py-6">
-      <div className="flex justify-between gap-4 mb-6">
+    <div className="px-4 py-6">
+      <div className="flex justify-center gap-2 mb-6 flex-wrap">
         {moods.map((mood) => (
           <button
             key={mood.value}
             onClick={() => onSelect(mood.value)}
-            className={`flex flex-col items-center gap-2 p-3 rounded-3xl transition-all w-16 h-20 justify-center cursor-pointer ${
-              selected === mood.value ? "bg-[#E6F2FF]" : "bg-white"
-            }`}
+            className={`flex flex-col items-center gap-2 p-3 rounded-3xl transition-all w-16 h-20 justify-center cursor-pointer flex-shrink-0 ${selected === mood.value ? "bg-[#E6F2FF]" : "bg-white"
+              }`}
           >
             <span className="text-3xl">{mood.emoji}</span>
             <span className="text-[11px] font-medium text-[#718096]" style={{ fontFamily: "var(--font-inter)" }}>

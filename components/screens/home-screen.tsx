@@ -33,7 +33,7 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
           value={journalText}
           onChange={(e) => setJournalText(e.target.value)}
           placeholder="Write your thoughts for today..."
-          className="w-full h-72 p-5 border-2 border-[#E2E8F0] rounded-3xl resize-none focus:outline-none focus:border-[#4299E1] text-base text-[#2D3748] placeholder-[#A0AEC0]"
+          className="w-full h-72 p-5 border-2 border-[#E2E8F0] rounded-3xl resize-none focus:outline-none focus:border-[#4299E1] text-base text-[#2D3748] placeholder-[#A0AEC0] bg-white/50"
           style={{ fontFamily: "var(--font-inter)" }}
         />
       </div>
@@ -41,15 +41,15 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
       <div className="px-8">
         <Button
           onClick={handleSave}
-          className="w-full h-14 text-lg text-white rounded-2xl"
           style={{
             background: "linear-gradient(to right, #8EC5FC, #E0C3FC)",
             fontFamily: "var(--font-poppins)",
           }}
+          className="w-full h-14 text-lg text-white rounded-2xl active:brightness-110 transition-all"
         >
           Save Entry
         </Button>
       </div>
-    </div>
+    </div >
   )
 }

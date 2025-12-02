@@ -41,7 +41,7 @@ export default function App() {
     <div
       className="max-w-sm mx-auto min-h-screen flex flex-col"
       style={{
-        background: "linear-gradient(135deg, #F7FAFC 0%, #E6F2FF 50%, #EDF2F7 100%)",
+        background: "linear-gradient(135deg, #E2E8F0 0%, #D1E3FF 50%, #E2E8F0 100%)",
       }}
     >
       <div className="flex-1 overflow-y-auto pb-24">
@@ -72,9 +72,8 @@ export default function App() {
           <button
             key={item.id}
             onClick={() => handleNavigate(item.id)}
-            className={`flex flex-col items-center gap-1 cursor-pointer transition-colors ${
-              currentScreen === item.id ? "text-[#4299E1]" : "text-[#A0AEC0]"
-            }`}
+            className={`flex flex-col items-center gap-1 cursor-pointer transition-colors ${currentScreen === item.id ? "text-[#4299E1]" : "text-[#A0AEC0]"
+              }`}
           >
             <span className="text-2xl">{item.icon}</span>
             <span className="text-[10px] font-medium" style={{ fontFamily: "var(--font-inter)" }}>
