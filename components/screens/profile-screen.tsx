@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 
 interface ProfileScreenProps {
-    onNavigate: (screen: "home" | "calendar" | "goals" | "community" | "post-detail" | "profile") => void
+    onNavigate: (screen: "home" | "calendar" | "goals" | "reflect" | "profile") => void
 }
 
 export function ProfileScreen({ onNavigate }: ProfileScreenProps) {

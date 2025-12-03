@@ -12,7 +12,7 @@ interface Goal {
 }
 
 interface GoalsScreenProps {
-  onNavigate: (screen: "home" | "calendar" | "goals" | "community" | "post-detail" | "profile") => void
+  onNavigate: (screen: "home" | "calendar" | "goals" | "reflect" | "profile") => void
 }
 
 export function GoalsScreen({ onNavigate }: GoalsScreenProps) {

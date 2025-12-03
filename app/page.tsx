@@ -4,11 +4,10 @@ import { useState } from "react"
 import { HomeScreen } from "@/components/screens/home-screen"
 import { CalendarScreen } from "@/components/screens/calendar-screen"
 import { GoalsScreen } from "@/components/screens/goals-screen"
-import { CommunityScreen } from "@/components/screens/community-screen"
-import { PostDetailScreen } from "@/components/screens/post-detail-screen"
+import { ReflectScreen } from "@/components/screens/reflect-screen"
 import { ProfileScreen } from "@/components/screens/profile-screen"
 
-type ScreenType = "home" | "calendar" | "goals" | "community" | "post-detail" | "profile"
+type ScreenType = "home" | "calendar" | "goals" | "reflect" | "profile"
 
 interface Post {
   id: string
@@ -22,20 +21,9 @@ interface Post {
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<ScreenType>("home")
-  const [selectedPost, setSelectedPost] = useState<Post | null>(null)
 
   const handleNavigate = (screen: ScreenType) => {
     setCurrentScreen(screen)
-  }
-
-  const handlePostClick = (post: Post) => {
-    setSelectedPost(post)
-    setCurrentScreen("post-detail")
-  }
-
-  const handleBackFromPostDetail = () => {
-    setCurrentScreen("community")
-    setSelectedPost(null)
   }
 
   return (
@@ -49,10 +37,7 @@ export default function App() {
         {currentScreen === "home" && <HomeScreen onNavigate={handleNavigate} />}
         {currentScreen === "calendar" && <CalendarScreen onNavigate={handleNavigate} />}
         {currentScreen === "goals" && <GoalsScreen onNavigate={handleNavigate} />}
-        {currentScreen === "community" && <CommunityScreen onNavigate={handleNavigate} onPostClick={handlePostClick} />}
-        {currentScreen === "post-detail" && selectedPost && (
-          <PostDetailScreen post={selectedPost} onBack={handleBackFromPostDetail} />
-        )}
+        {currentScreen === "reflect" && <ReflectScreen onNavigate={handleNavigate} />}
         {currentScreen === "profile" && <ProfileScreen onNavigate={handleNavigate} />}
       </div>
 
@@ -61,7 +46,7 @@ export default function App() {
           { id: "home" as const, icon: "🏠", label: "Home" },
           { id: "calendar" as const, icon: "📅", label: "Calendar" },
           { id: "goals" as const, icon: "🎯", label: "Goals" },
-          { id: "community" as const, icon: "👥", label: "Community" },
+          { id: "reflect" as const, icon: "✍️", label: "Reflect" },
           { id: "profile" as const, icon: "👤", label: "Profile" },
         ].map((item) => (
           <button

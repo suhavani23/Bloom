@@ -17,8 +17,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "BLOOM - Daily Journaling",
-  description: "Track your mood, journal your thoughts, and connect with community",
+  title: "MOOD SPACE - Daily Journaling",
+  description: "Track your mood, journal your thoughts, and reflect on your day",
   generator: "v0.app",
   viewport: "width=375, initial-scale=1, maximum-scale=1",
   icons: {

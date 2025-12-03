@@ -3,7 +3,7 @@
 import { useState } from "react"
 
 interface CalendarScreenProps {
-  onNavigate: (screen: "home" | "calendar" | "goals" | "community" | "post-detail" | "profile") => void
+  onNavigate: (screen: "home" | "calendar" | "goals" | "reflect" | "profile") => void
 }
 
 const moodEmojis = {

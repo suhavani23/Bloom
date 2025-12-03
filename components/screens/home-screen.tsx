@@ -6,7 +6,7 @@ import { MoodSelector } from "@/components/mood-selector"
 import { StreakBadge } from "@/components/streak-badge"
 
 interface HomeScreenProps {
-  onNavigate: (screen: "home" | "calendar" | "goals" | "community" | "post-detail" | "profile") => void
+  onNavigate: (screen: "home" | "calendar" | "goals" | "reflect" | "profile") => void
 }
 
 export function HomeScreen({ onNavigate }: HomeScreenProps) {
@@ -24,7 +24,7 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
           className="text-2xl font-bold text-center tracking-wide bg-gradient-to-r from-[#8EC5FC] to-[#E0C3FC] bg-clip-text text-transparent"
           style={{ fontFamily: "var(--font-poppins)" }}
         >
-          WELCOME TO BLOOM
+          WELCOME TO MOOD SPACE
         </h1>
       </div>
       <div className="px-8 mb-8">
