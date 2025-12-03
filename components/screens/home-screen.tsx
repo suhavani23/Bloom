@@ -21,7 +21,7 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
     <div className="pt-16 pb-4">
       <div className="px-8 mb-4">
         <h1
-          className="text-2xl font-bold text-center tracking-wide bg-gradient-to-r from-[#8EC5FC] to-[#E0C3FC] bg-clip-text text-transparent"
+          className="text-2xl font-bold text-center tracking-wide bg-gradient-to-r from-[#4A90E2] to-[#9B59B6] bg-clip-text text-transparent"
           style={{ fontFamily: "var(--font-poppins)" }}
         >
           WELCOME TO MOOD SPACE
