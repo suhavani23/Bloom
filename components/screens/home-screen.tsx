@@ -6,7 +6,7 @@ import { MoodSelector } from "@/components/mood-selector"
 import { StreakBadge } from "@/components/streak-badge"
 
 interface HomeScreenProps {
-  onNavigate: (screen: string) => void
+  onNavigate: (screen: "home" | "calendar" | "goals" | "community" | "post-detail" | "profile") => void
 }
 
 export function HomeScreen({ onNavigate }: HomeScreenProps) {
@@ -19,10 +19,18 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
 
   return (
     <div className="pt-16 pb-4">
-      <div className="px-8 mb-8">
-        <h1 className="text-3xl font-semibold text-[#2D3748] text-center" style={{ fontFamily: "var(--font-poppins)" }}>
-          How are you feeling today?
+      <div className="px-8 mb-4">
+        <h1
+          className="text-2xl font-bold text-center tracking-wide bg-gradient-to-r from-[#8EC5FC] to-[#E0C3FC] bg-clip-text text-transparent"
+          style={{ fontFamily: "var(--font-poppins)" }}
+        >
+          WELCOME TO BLOOM
         </h1>
+      </div>
+      <div className="px-8 mb-8">
+        <h2 className="text-2xl font-semibold text-[#2D3748] text-center" style={{ fontFamily: "var(--font-poppins)" }}>
+          How are you feeling today?
+        </h2>
       </div>
 
       <MoodSelector onSelect={setSelectedMood} selected={selectedMood} />

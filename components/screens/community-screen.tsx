@@ -13,7 +13,7 @@ interface Post {
 }
 
 interface CommunityScreenProps {
-  onNavigate: (screen: string) => void
+  onNavigate: (screen: "home" | "calendar" | "goals" | "community" | "post-detail" | "profile") => void
   onPostClick: (post: Post) => void
 }
 
@@ -82,9 +82,8 @@ export function CommunityScreen({ onNavigate, onPostClick }: CommunityScreenProp
           <button
             key={filter}
             onClick={() => setSortFilter(filter)}
-            className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
-              sortFilter === filter ? "bg-[#4299E1] text-white" : "bg-white text-[#718096] border border-[#E2E8F0]"
-            }`}
+            className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${sortFilter === filter ? "bg-[#4299E1] text-white" : "bg-white text-[#718096] border border-[#E2E8F0]"
+              }`}
             style={{ fontFamily: "var(--font-inter)" }}
           >
             {filter.charAt(0).toUpperCase() + filter.slice(1)}

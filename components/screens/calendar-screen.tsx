@@ -3,7 +3,7 @@
 import { useState } from "react"
 
 interface CalendarScreenProps {
-  onNavigate: (screen: string) => void
+  onNavigate: (screen: "home" | "calendar" | "goals" | "community" | "post-detail" | "profile") => void
 }
 
 const moodEmojis = {
@@ -83,13 +83,12 @@ export function CalendarScreen({ onNavigate }: CalendarScreenProps) {
             <button
               key={index}
               onClick={() => day && setSelectedDate(day)}
-              className={`h-12 rounded-lg flex items-center justify-center text-center text-sm font-medium cursor-pointer ${
-                !day
-                  ? "bg-transparent"
-                  : day <= new Date().getDate() && currentMonth === new Date().getMonth()
-                    ? "bg-white border-2 border-[#4299E1]"
-                    : "bg-white"
-              }`}
+              className={`h-12 rounded-lg flex items-center justify-center text-center text-sm font-medium cursor-pointer ${!day
+                ? "bg-transparent"
+                : day <= new Date().getDate() && currentMonth === new Date().getMonth()
+                  ? "bg-white border-2 border-[#4299E1]"
+                  : "bg-white"
+                }`}
             >
               {day && mockEntries[day] ? (
                 <span className="text-lg">{moodEmojis[mockEntries[day]]}</span>
@@ -97,16 +96,6 @@ export function CalendarScreen({ onNavigate }: CalendarScreenProps) {
                 <span className={`text-xs ${day ? "text-[#2D3748]" : "text-[#E2E8F0]"}`}>{day}</span>
               )}
             </button>
-          ))}
-        </div>
-      </div>
-
-      <div className="px-6 mb-8">
-        <div className="grid grid-cols-5 gap-2">
-          {Object.entries(moodEmojis).map(([mood, emoji]) => (
-            <div key={mood} className="text-center text-xs">
-              <span className="text-lg">{emoji}</span>
-            </div>
           ))}
         </div>
       </div>

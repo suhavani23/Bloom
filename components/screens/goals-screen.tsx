@@ -12,7 +12,7 @@ interface Goal {
 }
 
 interface GoalsScreenProps {
-  onNavigate: (screen: string) => void
+  onNavigate: (screen: "home" | "calendar" | "goals" | "community" | "post-detail" | "profile") => void
 }
 
 export function GoalsScreen({ onNavigate }: GoalsScreenProps) {
@@ -110,9 +110,8 @@ export function GoalsScreen({ onNavigate }: GoalsScreenProps) {
                   <p className="text-xs text-[#718096]">Target: {goal.targetDate}</p>
                   <button
                     onClick={() => handleToggleComplete(goal.id)}
-                    className={`w-5 h-5 border-2 rounded flex items-center justify-center ${
-                      goal.completed ? "bg-[#4299E1] border-[#4299E1] text-white" : "border-[#A0AEC0]"
-                    }`}
+                    className={`w-5 h-5 border-2 rounded flex items-center justify-center ${goal.completed ? "bg-[#4299E1] border-[#4299E1] text-white" : "border-[#A0AEC0]"
+                      }`}
                   >
                     {goal.completed && "✓"}
                   </button>

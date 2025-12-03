@@ -6,6 +6,7 @@ import { CalendarScreen } from "@/components/screens/calendar-screen"
 import { GoalsScreen } from "@/components/screens/goals-screen"
 import { CommunityScreen } from "@/components/screens/community-screen"
 import { PostDetailScreen } from "@/components/screens/post-detail-screen"
+import { ProfileScreen } from "@/components/screens/profile-screen"
 
 type ScreenType = "home" | "calendar" | "goals" | "community" | "post-detail" | "profile"
 
@@ -52,13 +53,7 @@ export default function App() {
         {currentScreen === "post-detail" && selectedPost && (
           <PostDetailScreen post={selectedPost} onBack={handleBackFromPostDetail} />
         )}
-        {currentScreen === "profile" && (
-          <div className="pt-16 px-6 text-center">
-            <p className="text-2xl font-semibold text-[#2D3748]" style={{ fontFamily: "var(--font-poppins)" }}>
-              Profile Coming Soon
-            </p>
-          </div>
-        )}
+        {currentScreen === "profile" && <ProfileScreen onNavigate={handleNavigate} />}
       </div>
 
       <nav className="fixed bottom-0 left-0 right-0 max-w-sm mx-auto bg-white border-t border-[#E2E8F0] h-20 flex justify-around items-center">
